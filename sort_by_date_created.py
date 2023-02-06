@@ -20,7 +20,7 @@ def sort_to_dirs(dir_to_sort: str) -> None:
 
         if folder_name != ctime:
             folder_name = ctime
-        os.mkdir(f'{dir_to_sort}/{folder_name}')
+            os.mkdir(f'{dir_to_sort}/{folder_name}')
         target_dir = os.path.join(os.curdir, dir_to_sort, folder_name)
         shutil.move(os.path.join(os.curdir, dir_to_sort, f_name), target_dir)
 

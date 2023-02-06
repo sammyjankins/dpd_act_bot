@@ -36,6 +36,7 @@ async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         os.makedirs('photo')
     file = await update.channel_post.photo[-1].get_file()
     await file.download_to_drive(custom_path=f'photo/{file.file_unique_id}.jpg')
+    await update.effective_chat.send_message(f"Файл {file.file_unique_id}.jpg сохранен.")
 
 
 async def send_photos(context: CallbackContext):
